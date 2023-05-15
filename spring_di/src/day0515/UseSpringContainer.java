@@ -25,8 +25,14 @@ public class UseSpringContainer {
 		//Service 객체가 제공하는 기능을 사용
 		si.add("테스트");
 		System.out.println(si.search());
+		//MethodService.class => 왜? getBean(찾을 클래스 파일) byte 코드
 		
-		MethodService ms = ac.getBean(MethodService.class);
+		// 클래스를 넣어 객체를 찾고 할당
+		//MethodService ms = ac.getBean(MethodService.class); 객체 생성 SpringContainer
+		
+		//아이디를 넣으면 객체를 찾고 > 부모로 얻어와서 > 자식으로 변환한 다음 할당 => 느림
+		MethodService ms = (MethodService)ac.getBean("ms");
+		
 		ms.add("테스트2");
 		System.out.println(ms.search());
 		

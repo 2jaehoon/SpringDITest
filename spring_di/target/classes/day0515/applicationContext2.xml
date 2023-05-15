@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+	<!-- 문자열 의존성 주입 -->
+	<bean id="it" class="day0515.injection.InjectionTest" >
+	<constructor-arg value="안녕 황충연" type="java.lang.String"/>
+	</bean>
+	
+	<!-- 기본형 의존성 주입 : 숫자일지라도 type을 설정하지 않으면 문자열로 처리 -->
+	<bean id="it1" class="day0515.injection.InjectionTest">
+	<constructor-arg value="24" type="int"/> 
+	</bean>
+	
+	<!-- JCF 의존성 주입 -->
+	<!-- java.util.List 의존성 주입 -->
+	<bean id="itList" class="day0515.injection.InjectionTest" >
+	<constructor-arg> 
+	<list>
+	<value type="java.lang.String">김경태</value>
+	<value type="java.lang.String">윤상준</value>
+	<value type="java.lang.String">황충연</value>
+	<value type="java.lang.String">박진호</value>
+	</list>
+	</constructor-arg>
+	</bean>
+	
+	<!-- java.util.Map 의존성 주입 -->
+	<bean id="itMap" class="day0515.injection.InjectionTest">
+	<constructor-arg>
+	<map>
+	<entry>
+	<key>
+	<value type="java.lang.String">java</value>
+	</key>
+	<value>완벽한 객체 지향 언어, WORA 지원</value>
+	</entry>
+	
+	<entry>
+	<key>
+	<value type="java.lang.String">HTML</value>
+	</key>
+	<value>팀버너즈리가 초안을 만든 웹 언어/ 나는 HTML로 프로그래밍합니다.</value>
+	</entry>
+	
+	<entry>
+	<key>
+	<value type="java.lang.String">CSS</value>
+	</key>
+	<value>하콤 비움 리가 초안을 만든 웹 언어/ 통일성 있는 디자인 제공</value>
+	</entry>
+	
+	<entry>
+	<key>
+	<value type="java.lang.String">JS</value>
+	</key>
+	<value>브랜던 아이크가 만든 스크립트 언어/ 연산, 유효성 검증 </value>
+	</entry>
+	</map>
+	</constructor-arg>
+	</bean>
+	
+
+</beans>

@@ -8,6 +8,9 @@
 	<enableImports><![CDATA[false]]></enableImports>
 	<configs>
 		<config>src/day0515/applicationContext.xml</config>
+		<config>src/day0515/applicationContext2.xml</config>
+		<config>src/day0515/appContext.xml</config>
+		<config>src/day0515/annotation/annAppCon.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>
