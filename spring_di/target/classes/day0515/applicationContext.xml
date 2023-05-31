@@ -14,7 +14,7 @@
 <constructor-arg ref="msdi"/>
 </bean>
 <!-- method 의존성 주입 method=>property -->
-<bean id="ms" class="day0515.service.MethodService">
+<bean id="ms" class="day0515.service.MethodService" scope="prototype">
 <property name="dao" ref="odi" />
 </bean>
 

@@ -35,6 +35,10 @@ public class UseSpringContainer {
 		
 		ms.add("Å×½ºÆ®2");
 		System.out.println(ms.search());
+		MethodService ms2 = (MethodService)ac.getBean("ms");
+		MethodService ms3 = (MethodService)ac.getBean("ms");
+		
+		System.out.println(ms + " " + ms2 + " " + ms3);
 		
 	}//main
 	
